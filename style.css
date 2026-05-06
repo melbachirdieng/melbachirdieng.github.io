@@ -607,6 +607,39 @@ section {
     gap: 1.5rem;
 }
 
+/* Skill badges (replacement for old skill-bars) */
+.skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    background: var(--dark-3);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.2);
+}
+
+.skill-badge i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
 .skill-bar {
     width: 100%;
 }
@@ -688,6 +721,65 @@ section {
 .skill-progress-fill[data-progress="60"] { --progress: 60%; }
 .skill-progress-fill[data-progress="55"] { --progress: 55%; }
 .skill-progress-fill[data-progress="50"] { --progress: 50%; }
+
+/* === Open to Work banner === */
+.open-to-work-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    margin: 1rem 0 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.12), rgba(0, 212, 255, 0.12));
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+.open-to-work-banner strong { color: var(--primary); font-weight: 700; }
+.otw-pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+}
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
+    70%  { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+/* === Project featured (carte avec coin badge) === */
+.project-card.project-featured {
+    border: 1px solid rgba(0, 255, 136, 0.45);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.12);
+    position: relative;
+}
+.project-badge-corner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 2;
+}
+.project-link.project-link-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    font-weight: 700;
+    border: none;
+}
+.project-link.project-link-primary:hover {
+    box-shadow: 0 4px 16px rgba(0, 255, 136, 0.4);
+    transform: translateY(-2px);
+}
 
 /* Projects Section */
 .projects-grid {
